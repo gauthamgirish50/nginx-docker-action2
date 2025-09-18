@@ -1,0 +1,15 @@
+name: 'Nginx Server'
+description: 'Serve a static HTML file using Nginx'
+inputs:
+  html-file:
+    description: 'Path to the HTML file to serve'
+    required: true
+    default: 'index.html'
+outputs:
+  status:
+    description: 'Status of the Nginx server'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.html-file }}
