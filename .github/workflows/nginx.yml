@@ -1,0 +1,12 @@
+name: Nginx Container Example
+on: push
+jobs:
+  serve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - name: Run Nginx container action
+        uses: ./  # Path to your action
+        with:
+          html-file: index.html
